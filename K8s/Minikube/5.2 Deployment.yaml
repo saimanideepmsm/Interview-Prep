@@ -2,8 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment-demo
+  annotations:
+    description: "This is a demo deployment for nginx"
+    kubernetes.io/change-cause: "Initial deployment of nginx"
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: nginx-demo
